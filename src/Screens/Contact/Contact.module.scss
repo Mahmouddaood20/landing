@@ -1,0 +1,26 @@
+@import '../../scss/variables';
+
+.contact{
+    border-radius: 1rem;
+    padding: 1rem;
+    color: $mainColor;
+    // background-color: $lightGray;
+
+    h2{
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: $mainColor;
+    }
+
+    h5{
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0.2rem 0 0 0;
+    }
+
+    input::placeholder{
+        color: $mainColor;
+        font-size: medium;
+    }
+}

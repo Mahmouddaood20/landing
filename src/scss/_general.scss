@@ -1,0 +1,66 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+    font-family: 'Gotham' !important;
+}
+
+body{
+    font-size: 16px;
+    transition: direction 0.5s ease-in-out;
+    direction: ltr !important;
+}
+
+
+////////////// general css ////////////////
+
+.btn-clear{
+    background: none;
+    border: none;
+}
+
+.overflow-y-scroll{
+    overflow-y: scroll;
+    overflow-x: clip;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+.text-main{
+    color: $mainColor;
+}
+
+.h-80{
+    height: 80vh;
+}
+
+.text-gray{
+    color: gray;
+}
+
+*::-webkit-scrollbar {
+    width: 1rem;
+    background-color: #e2ebf5;;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb{
+    background-color: $mainColor;
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar {
+    width: 0;
+    background: linear-gradient(to right, white, #17375f14) !important;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: linear-gradient(to right, white, #17375f14) !important;
+}

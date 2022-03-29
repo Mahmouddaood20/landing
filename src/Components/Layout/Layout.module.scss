@@ -1,0 +1,220 @@
+@import '../../scss/variables';
+
+.layout{
+    min-height: 100vh;
+    padding: 1rem 0;
+    background-color: $mainColor;
+    color: #fff !important;
+    color: $white !important;
+    overflow: hidden;
+}
+
+.activeLayout{
+    background: linear-gradient(to right, white, #17375f14);
+    // #00000024);
+}
+
+
+.drop{
+    background-color: rgb(252, 252, 252);
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.content{
+    height: 0px;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+    border-radius: 0 0 0.5rem 0 ;
+}
+
+.showContent{
+    border-top: 1px solid rgb(235, 230, 230);
+    height: 105px;
+    // overflow: visible;
+}
+
+.dropItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    
+    h3{
+        font-size: 18px;
+        font-weight: 600;
+        color: $black;
+        // margin: 0.2rem 0.3rem 0 0;
+        text-transform: capitalize;
+    }
+}
+
+.activeDropItem{
+    background-color: #f2eee9;
+}
+
+.activeList{
+    height: 31rem !important;
+    overflow: visible;
+    padding: 10rem 0 0 0 !important;
+}
+
+.list{
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    height: 0px;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+
+
+    a{
+        display: block;
+        text-decoration: none;
+        font-size: 40px;
+        text-transform: uppercase;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.list a:hover{
+    color: inherit !important;
+}
+
+//////////////
+
+.showList{
+    position: absolute;
+    top:5%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    // background-color: red;
+}
+
+.mainIcon{
+    position: relative;
+    position: relative;
+    height: 20px;
+    width: 30px;
+    display: inline-block;
+    cursor: pointer;
+    color: #000;
+}
+
+.activeMainIcon::before {
+    transform: rotate(40deg);
+}
+.activeMainIcon::after{
+    transform: rotate(140deg) !important;
+}
+
+.mainIcon::before{
+    content: '';
+    background-color: $mainColor;
+    height: 5px;
+    width: 20px;
+    position: absolute;
+    top: 0;
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+}
+
+.mainIcon::after{
+    content: '';
+    background-color: $mainColor;
+    height: 5px;
+    width: 20px;
+    position: absolute;
+    top: -5px;
+    margin-top: 5px;
+    transform: rotate(90deg);
+    display: inline-block;
+    transition: all 0.5s ease-in-out;
+}
+
+.firstMainIcon::before , .firstMainIcon::after{
+    background-color: $white;
+}
+
+.explore{
+    text-transform: capitalize;
+    font-size: 18px;
+    margin-top: -0.8rem;
+    color: $mainColor;
+}
+
+.firstExplore{
+    color: $white !important;
+}
+
+.closeMenu{
+    list-style: none;
+    height: 130px;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: -10rem;
+    padding-left: 1.2rem !important;
+    transition: all 0.5s ease-in-out;
+}
+
+.activeCloseMenu{
+    top: 1.2rem !important;
+}
+
+.closeItem {
+    color: #a7a3a3 !important;
+    display: block;
+    margin: 0.5rem 0 ;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.closeItem:first-child{
+    margin: 0.1rem 0 0.5rem 0 !important;
+}
+
+.closeItem:hover{
+    color: inherit;
+}
+
+.acitveCloseItem{
+    color: $mainColor !important
+}
+
+
+// Footer
+footer{
+    padding: 4rem 0 1rem 0;
+
+    h2{
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 0.3rem !important;
+    }
+
+    h3{
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .divider{
+        height: 40px;
+        width: 1px;
+        background-color: gray;
+        display: inline-block;
+    }
+    h4{
+        font-size: 16px;
+    }
+
+    span{
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+

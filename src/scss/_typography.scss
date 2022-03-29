@@ -1,0 +1,23 @@
+////// Briefs ///// 
+@for $i from 8 through 72 {
+    .text-#{$i}{
+        font-size: $i / 18+rem !important;
+
+        @media (min-width: 992px) {
+            font-size: $i / 16+rem !important;
+        }
+    }
+}
+
+@for $i from 1 through 10 {
+    .opacity-#{$i*10} {
+        opacity: #{$i/10} !important;
+    }
+}
+
+@for $i from 0 through 10 {
+    .radius-#{$i*10} {
+        border-radius: #{$i*10}px !important;
+    }
+}
+

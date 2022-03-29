@@ -1,0 +1,102 @@
+@import '../../scss/variables';
+
+
+.clientDetail{
+    height: 80vh;
+    margin-top: 6rem;
+    // padding-top: 2rem;
+    // justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: $mainColor;
+    }
+
+    p{
+        font-size: 18px;
+        letter-spacing: 1px;
+        color: rgb(124, 116, 116);
+    }
+
+}
+
+.clientsDate{
+    overflow-y: scroll;
+    overflow-x: clip;
+    background-color: #17375f14;
+    border-radius: 15px;
+    margin-top: 1rem;
+    padding: 2rem 0 0 2rem;
+
+
+
+    // scrollbar-width: 15px;
+    // scrollbar-color: #5555;
+}
+
+.clientDropDown{
+    // min-width: 600px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    height: 0;
+    padding: 0;
+    margin-top: 0.3rem;
+
+    a{
+        display: block;
+        margin: 0 1rem;
+    }
+
+    img{
+        border-radius: 1rem;
+        margin-top: 1rem;
+    }
+}
+
+.activeClientDropDown{
+    padding: 1.5rem;
+    overflow-y: clip;
+    overflow-x: auto;
+    height: 200px;
+    // background-color: aquamarine;
+}
+
+// .clientItem{
+//     flex: 0 0 25%;
+//     position: relative;
+// }
+
+.activeClientBtn:hover{
+    color: $white !important;
+}
+
+.clientBtn:hover{
+    color: $mainColor;
+}
+
+.clientBtn{
+    padding: 0.7rem 1.5rem;
+    font-weight: bold;
+    font-size: 20px;
+    color: $mainColor;
+    transition: all 0.5s ease-in-out;
+}
+
+.activeClientBtn{
+    border: 1px solid #d8dee6;
+    outline: 0;
+    background-color: $mainColor;
+    color: $white;
+}
+
+.activeClientBtn:focus{
+    outline: 0;
+    box-shadow: none;
+}

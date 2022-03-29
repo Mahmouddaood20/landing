@@ -1,0 +1,67 @@
+@import '../../scss/variables';
+
+.teams{
+    height: 80vh;
+    margin-top: 6rem;
+    // padding-top: 2rem;
+    // justify-content: flex-end;
+    display: flex;
+    flex-direction: column;
+    // background-color: red;
+    overflow-y: auto;
+    overflow-x: clip;
+
+    h2{
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: $mainColor;
+    }
+}
+
+.profileImg{
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+
+    h5{
+        font-size: 20px;
+        font-weight: bold;
+        margin: 2rem 0;
+        color: $mainColor;
+        // transform: translateX(-30px);
+    }
+    
+}
+
+.imgContent{
+    height: 220px;
+    width: 220px;
+    border-radius: 7rem;
+    position: relative;
+    overflow: hidden;
+
+    
+    img{
+        border-radius: 7rem;
+    }
+   
+}
+
+.imgContent::before{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to bottom, #0003, #80808069 );
+    transition: all 0.5s ease-in-out;
+    border-radius: 7rem;
+}
+
+.profileImg:hover .imgContent::before{
+    height: 50%;
+    background-image: linear-gradient(to bottom, #ffffff00, #17375f33 43%);
+}

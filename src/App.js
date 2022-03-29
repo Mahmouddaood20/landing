@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { lazy , Suspense } from 'react';
+import { Route , BrowserRouter as Router  , Switch } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import './scss/styles.scss';
+import Locale from './Locale';
+
+const Companies = lazy(() => import('./Screens/Companies/Companies'));
+const Clients = lazy(() => import('./Screens/Clients/Clients'));
+const Contact = lazy(() => import('./Screens/Contact/Contact'));
+const Teams = lazy(() => import('./Screens/Teams/Teams'));
+const Layout = lazy(() => import('./Components/Layout/Layout'));
+const TeamDetail = lazy(() => import('./Screens/Teams/detail/TeamDetail'));
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const locale = useSelector(state => state.locale_reducer.locale)
+    Locale.setLanguage(locale)
+
+    return (
+        <Router>
+            <Suspense fallback={null}>
+                <Switch>
+                    <Route path='/' exact component={Layout} />
+                    <Route path='/company' exact component={Companies} />
+                    <Route path='/client' exact component={Clients} />
+                    <Route path='/contact' exact component={Contact} />
+                    <Route path='/team' exact component={Teams} />
+                    <Route path='/team/:id' exact component={TeamDetail} />
+                </Switch>
+            </Suspense>
+        </Router>
+    );
 }
 
 export default App;

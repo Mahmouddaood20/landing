@@ -1,17 +1,98 @@
 import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Styles from './Clients.module.scss'
+import Locale from '../../Locale';
+import Layout from '../../Components/Layout/Layout';
 
 import clientImg1 from '../../assets/images/client1.jpg'
 import clientImg2 from '../../assets/images/client2.jpg'
 import clientImg3 from '../../assets/images/client3.jpg'
-import Layout from '../../Components/Layout/Layout';
-import Locale from '../../Locale';
-import { useSelector } from 'react-redux';
 
+
+const data = [
+    {
+        id:1,
+        title: "Power & Energy",
+        images:[
+            clientImg1,
+            clientImg2,
+            clientImg3,
+            clientImg2
+        ]
+    },
+    {
+        id:2,
+        title: "Technology",
+        images:[
+            clientImg2,
+            clientImg3,
+            clientImg1,
+        ]
+    },
+    {
+        id:3,
+        title: "Banking and Finance",
+        images:[
+            clientImg2,
+            clientImg1,
+            clientImg3,
+        ]
+    },
+    {
+        id:4,
+        title: "Technology",
+        images:[
+            clientImg2,
+            clientImg3,
+            clientImg1,
+            clientImg2,
+            clientImg3
+        ]
+    },
+    {
+        id:5,
+        title: "Power & energy",
+        images:[
+            clientImg2,
+            clientImg3,
+            clientImg1,
+            clientImg3
+        ]
+    },
+    {
+        id:6,
+        title: "Banking and finance",
+        images:[
+            clientImg2,
+            clientImg3,
+            clientImg1,
+        ]
+    },
+    {
+        id:7,
+        title: "Miran",
+        images:[
+            clientImg1,
+            clientImg3,
+            clientImg2,
+            clientImg3
+        ]
+    },
+    {
+        id:8,
+        title: "Technology",
+        images:[
+            clientImg2,
+            clientImg1,
+            clientImg3,
+            clientImg2
+        ]
+    },
+]
 
 export default function Clients(){
 
-    const [open , setOpen] = useState(0)
+    const [open , setOpen] = useState(1)
     const locale = useSelector(state => state.locale_reducer.locale)
 
     return (
@@ -21,74 +102,25 @@ export default function Clients(){
                     <h2>{Locale['Clients_Title']}</h2>
                     {/* <p className='mt-3'>{Locale['Client_Description']}</p> */}
                     <div className={Styles.clientsDate} >
-                        {/* <div className='row'>
-                            {[0,1,2,3,4,5,6,7,8,9,10].map((_ , index) => {
-                            return (
-                                    <div className='col-3' key={index}>
-                                        <button onClick={() => setOpen(index)} className="btn btn-clear py-2 px-5 text-22 fw-bold" >
-                                            Miran
-                                        </button>
-                                        {open === index ? 
-                                            <ul className={`${Styles.clientDropDown} ${open !== index ? 'd-none' : index % 4 === 0 ? 'float-left' : 'float-right'} `} >
-                                                <li>
-                                                    <a href="#">
-                                                        <img src={clientImg1} width={130} height={130} alt="client1"/>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src={clientImg2} width={130} height={130} alt="client2"/>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src={clientImg3} width={130} height={130} alt="client3"/>
-                                                    </a>
-                                                </li>
-                                                {(index === 3 || index === 6 || index === 8) && <li>
-                                                    <a href="#">
-                                                        <img src={clientImg3} width={130} height={130} alt="client3"/>
-                                                    </a>
-                                                </li>}
-                                            </ul>
-                                            : ''
-                                        }
-                                    </div>
-                                ) 
-                            })}
-                        </div> */}
-
                         <div className='row'>
-                            {[0,1,2,3,4,5,6,7,8,9,10].map((_ , index) => {
+                            {data.map(item => {
                             return (
-                                    <div className='col-12' key={index}>
-                                        <button onClick={() => setOpen(index)} className={`btn btn-clear ${Styles.clientBtn} ${open === index ? Styles.activeClientBtn: ''} `} >
-                                            {locale === "ar" ? " شركة ميران" : "Banking and Finance"}
+                                    <div className='col-12' key={item.id}>
+                                        <button onClick={() => setOpen(item.id)} className={`btn btn-clear ${Styles.clientBtn} ${open === item.id ? Styles.activeClientBtn: ''} `} >
+                                            {item.title}
                                         </button>
                                         
-                                            <ul className={`${Styles.clientDropDown} ${open === index ? Styles.activeClientDropDown : ''} `} >
-                                                <li>
-                                                    <a href="#">
-                                                        <img src={clientImg1} width={200} height={150} alt="client1"/>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src={clientImg2} width={200} height={150} alt="client2"/>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">
-                                                        <img src={clientImg3} width={200} height={150} alt="client3"/>
-                                                    </a>
-                                                </li>
-                                                {(index === 3 || index === 0 || index === 8) && <li>
-                                                    <a href="#">
-                                                        <img src={clientImg3} width={200} height={150} alt="client3"/>
-                                                    </a>
-                                                </li>}
+                                            <ul className={`${Styles.clientDropDown} ${open === item.id ? Styles.activeClientDropDown : ''} `} >
+                                                {item.images.map((image , i) => {
+                                                    return (
+                                                        <li>
+                                                            <a href="#">
+                                                                <img src={image} width={200} height={150} alt="client1"/>
+                                                            </a>
+                                                        </li>
+                                                    );
+                                                })}
                                             </ul>
-                                            
                                     </div>
                                 ) 
                             })}

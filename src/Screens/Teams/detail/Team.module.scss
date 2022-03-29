@@ -3,6 +3,7 @@
 .team{
     height: 80vh;
     margin-top: 6rem;
+    padding-left: 1rem;
     display: flex;
     flex-direction: column;
     color: $mainColor;
@@ -28,8 +29,8 @@
 }
 
 .imgContent{
-    height: 220px;
-    width: 220px;
+    height: 200px;
+    width: 200px;
     border-radius: 7rem;
     position: relative;
     overflow: hidden;

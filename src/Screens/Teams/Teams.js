@@ -27,16 +27,16 @@ const data = [
         name:"Team Member",
         image: profileImg1
     },
-    {
-        id:5,
-        name:"Arshavin",
-        image: profileImg2
-    },
-    {
-        id:6,
-        name:"Team Member",
-        image: profileImg1
-    }
+    // {
+    //     id:5,
+    //     name:"Arshavin",
+    //     image: profileImg2
+    // },
+    // {
+    //     id:6,
+    //     name:"Team Member",
+    //     image: profileImg1
+    // }
 ]
 
 export default function Teams(){
@@ -49,7 +49,7 @@ export default function Teams(){
             <div className="col-md-10 col-12 mx-auto">
                 <div className={Styles.teams}>
                     <h2>{Locale['Teams']}</h2>
-                    <div className="row mt-5">
+                    <div className="row mt-4">
                         {data.map(item => {
                             return (
                                 <div className="col-md-3 col-12" key={item.id}>
@@ -59,7 +59,7 @@ export default function Teams(){
                                     })}>
                                         <div className={Styles.profileImg}>
                                             <div className={Styles.imgContent}>
-                                                 <img width={210} height={210} src={item.image} alt="profile 1" />
+                                                 <img width={190} height={190} src={item.image} alt="profile 1" />
                                             </div>
                                             <h5 className={locale === "ar" ? 'ms-5' : 'me-5'}>{item.name}</h5>
                                         </div>

@@ -17,7 +17,6 @@ const data = [
             clientImg1,
             clientImg2,
             clientImg3,
-            clientImg2
         ]
     },
     {

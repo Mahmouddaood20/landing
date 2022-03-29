@@ -3,7 +3,7 @@
 .teams{
     height: 80vh;
     margin-top: 6rem;
-    // padding-top: 2rem;
+    padding-left: 1rem;
     // justify-content: flex-end;
     display: flex;
     flex-direction: column;
@@ -25,7 +25,7 @@
     position: relative;
 
     h5{
-        font-size: 20px;
+        font-size: 16px;
         font-weight: bold;
         margin: 2rem 0;
         color: $mainColor;
@@ -35,8 +35,8 @@
 }
 
 .imgContent{
-    height: 210px;
-    width: 210px;
+    height: 190px;
+    width: 190px;
     border-radius: 7rem;
     position: relative;
     overflow: hidden;

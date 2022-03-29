@@ -91,7 +91,7 @@ export default function Layout({
                                 className={`${location.pathname === "/client" || location.pathname === "/team" ? 'h-90' : 'h-80'}`}>
                                 {children}
                             </div>
-                            <footer className={`${location.pathname !== "/" ? 'text-gray' : 'text-white'}`}>
+                            <footer className={`${location.pathname !== "/" ? 'text-gray' : 'text-white'} mt-3`}>
                                 <div className='col-md-6 mx-auto'>
                                         <div className='d-flex align-items-center'>
                                             <div className='me-5'>

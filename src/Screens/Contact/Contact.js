@@ -6,7 +6,7 @@ export default function Contact(){
     return (
         <Layout
          >
-            <div className='col-md-10 col-12 mt-5 pt-5 mx-auto'>
+            <div className='col-md-10 col-12 mx-auto'>
                 <div className={Styles.contact}>
                     <div className="row">
                         <div className="col-12 text-center">

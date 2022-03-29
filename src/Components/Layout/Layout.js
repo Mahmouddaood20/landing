@@ -36,43 +36,74 @@ export default function Layout({
     return (
         <div className={`${Styles.layout} ${location.pathname !== "/" ? Styles.activeLayout : ''}`}>
             <div className='container'>
-                <div className={Styles.showList}>
-                    <span className={`${Styles.mainIcon} ${location.pathname === "/" ? Styles.firstMainIcon : ''} ${open ? Styles.activeMainIcon : ''}`} onClick={() => setOpen(!open)}></span>
-                    <span className={`${Styles.explore} ${location.pathname === "/" ? Styles.firstExplore : ''} ${open ? 'd-none' : ''}`}>explore</span>
-                    <ul className={`${Styles.closeMenu} ${open ? Styles.activeCloseMenu : ''}`}>
-                        <li>
-                            <NavLink 
-                                to={'/company'}
-                                className={`${Styles.closeItem} ${location.pathname === "/company" ? Styles.acitveCloseItem : ''}`}
+                <div className='row align-items-center justify-content-end position-relative'>
+                    <div className={Styles.showList}>
+                        <span className={`${Styles.mainIcon} ${location.pathname === "/" ? Styles.firstMainIcon : ''} ${open ? Styles.activeMainIcon : ''}`} onClick={() => setOpen(!open)}></span>
+                        <span className={`${Styles.explore} ${location.pathname === "/" ? Styles.firstExplore : ''} ${open ? 'd-none' : ''}`}>{Locale['Explore']}</span>
+                        <ul className={`${Styles.closeMenu} ${open ? Styles.activeCloseMenu : ''}`}>
+                            <li>
+                                <NavLink 
+                                    to={'/company'}
+                                    className={`${Styles.closeItem} ${location.pathname === "/company" ? Styles.acitveCloseItem : ''}`}
+                                >
+                                    {Locale['Company']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink 
+                                    to={'/client'}
+                                    className={`${Styles.closeItem} ${location.pathname === "/client" ? Styles.acitveCloseItem : ''}`}
+                                >
+                                    {Locale['Clients']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink 
+                                    to={'/team'}
+                                    className={`${Styles.closeItem} ${location.pathname === "/team" ? Styles.acitveCloseItem : ''}`}
+                                >
+                                    {Locale['Teams']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink 
+                                    to={'/contact'}
+                                    className={`${Styles.closeItem} ${location.pathname === "/contact" ? Styles.acitveCloseItem : ''}`}
+                                >
+                                    {Locale['Contact']}
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className={Styles.drop}>
+                        <div className={`${Styles.dropItem}`} onClick={() => setOpenDrop(!openDrop)}>
+                            <div className={`d-flex align-items-center ${locale === "ar" ? 'ms-2' : 'me-2'}`}>
+                                <img src={locale === "ar" ? arbImg : engImg} width={35} height={30} alt="eng icon" />
+                                <h3 className={`mt-2 ${locale === "ar" ? 'me-1' : 'ms-1'}`}>{locale === "ar" ? Locale['Arabic'] : Locale['English']}</h3>
+                            </div>
+                            <span className='icx icx-arrow-down fw-bold text-main text-14' />
+                        </div>
+                        <div className={`${Styles.content} ${openDrop ? Styles.showContent : ''}`}>
+                            <div 
+                                className={`${locale === "ar" ? Styles.activeDropItem : ''} ${Styles.dropItem} `} 
+                                onClick={changeLocale("ar")} 
                             >
-                                Company
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink 
-                                to={'/client'}
-                                className={`${Styles.closeItem} ${location.pathname === "/client" ? Styles.acitveCloseItem : ''}`}
-                            >
-                                Clients
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink 
-                                to={'/team'}
-                                className={`${Styles.closeItem} ${location.pathname === "/team" ? Styles.acitveCloseItem : ''}`}
-                            >
-                                Teams
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink 
-                                to={'/contact'}
-                                className={`${Styles.closeItem} ${location.pathname === "/contact" ? Styles.acitveCloseItem : ''}`}
-                            >
-                                Contact
-                            </NavLink>
-                        </li>
-                    </ul>
+                                <div className={`d-flex align-items-center ${locale === "ar" ? 'ms-2' : 'me-2'}`}>
+                                    <img src={arbImg} className="radius-10" width={25} height={25} alt="eng icon" />
+                                    <h3 className={`mt-2 ${locale === "ar" ? 'me-1' : 'ms-1'}`}>{Locale['Arabic']}</h3>
+                                </div>
+                            </div>
+                            <div 
+                                className={`${locale === "en" ? Styles.activeDropItem : ''} ${Styles.dropItem}`}
+                                onClick={changeLocale("en")}
+                            > 
+                                <div className={`d-flex align-items-center ${locale === "ar" ? 'ms-2' : 'me-2'}`}>
+                                    <img src={engImg} className="radius-10" width={25} height={25} alt="eng icon" />
+                                    <h3 className={`mt-2 ${locale === "ar" ? 'me-1' : 'ms-1'}`}>{Locale['English']}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div className='row'>
@@ -91,21 +122,21 @@ export default function Layout({
                                 className={`${location.pathname === "/client" || location.pathname === "/team" ? 'h-90' : 'h-80'}`}>
                                 {children}
                             </div>
-                            <footer className={`${location.pathname !== "/" ? 'text-gray' : 'text-white'} mt-3`}>
-                                <div className='col-md-6 mx-auto'>
+                            <footer className={`${location.pathname !== "/" ? 'text-gray' : 'text-white'} ${location.pathname === "/" ? 'mt-0' : 'mt-3'} text-center`}>
+                                <div className='col-md-6 mx-auto d-flex justify-content-center'>
                                         <div className='d-flex align-items-center'>
-                                            <div className='me-md-5 me-2'>
-                                                <h2>Abdullah AlHudaithi</h2>
-                                                <h3>Professional Services</h3>
+                                            <div className={`${locale === "ar" ? 'ms-md-5 ' : 'me-md-5'} ${locale === "ar" ? 'ms-2' : 'me-2'}`}>
+                                                <h2>{Locale['Abdullah AlHudaithi']}</h2>
+                                                <h3>{Locale['Professional_Services']}</h3>
                                             </div>
                                             <div className={Styles.divider} />
-                                            <div className='ms-md-5 ms-1 d-flex align-items-start'>
+                                            <div className={` ${locale === "ar" ? 'me-md-5 ' : 'ms-md-5'} ${locale === "ar" ? 'me-1 ' : 'ms-1'} d-flex align-items-start`}>
                                                 <img 
                                                     src={globalImg}
                                                     alt='global image'
-                                                    className='me-3'
+                                                    className={`${locale === "ar" ? 'ms-3' : 'me-3'}`}
                                                 />
-                                                <h4>Proud Member of <br /> <span>Alliott Global Alliance</span></h4>
+                                                <h4>{Locale['Proud_Member_of']} <br /> <span>{Locale['Alliott_Global_Alliance']}</span></h4>
                                             </div>
                                         </div>
                                 </div>

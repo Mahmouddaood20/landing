@@ -57,7 +57,7 @@ export default function Teams(){
                                         pathname:`/team/${item.id}`,
                                         state: { item }
                                     })}>
-                                        <div className={Styles.profileImg}>
+                                        <div className={`${Styles.profileImg} ${locale === "ar" ? Styles.rtlProfileImg : ''} `}>
                                             <div className={Styles.imgContent}>
                                                  <img width={190} height={190} src={item.image} alt="profile 1" />
                                             </div>

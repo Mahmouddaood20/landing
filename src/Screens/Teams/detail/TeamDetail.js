@@ -11,7 +11,7 @@ export default function TeamDetail(){
             <div className="col-md-10 col-12 mx-auto">
                 <div className={Styles.team}>
                     <div className={Styles.imgContent}>
-                        <img width={200} height={200} src={item.image} alt="profile 1" />
+                        <img src={item.image} alt="profile 1" />
                     </div>
                     <h2>{item.name}</h2>
                     <h5>Exceutive Director</h5>

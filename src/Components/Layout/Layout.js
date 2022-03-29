@@ -94,16 +94,14 @@ export default function Layout({
                             <footer className={`${location.pathname !== "/" ? 'text-gray' : 'text-white'} mt-3`}>
                                 <div className='col-md-6 mx-auto'>
                                         <div className='d-flex align-items-center'>
-                                            <div className='me-5'>
+                                            <div className='me-md-5 me-2'>
                                                 <h2>Abdullah AlHudaithi</h2>
                                                 <h3>Professional Services</h3>
                                             </div>
                                             <div className={Styles.divider} />
-                                            <div className='ms-5 d-flex align-items-start'>
+                                            <div className='ms-md-5 ms-1 d-flex align-items-start'>
                                                 <img 
                                                     src={globalImg}
-                                                    width="35"
-                                                    height="35"
                                                     alt='global image'
                                                     className='me-3'
                                                 />

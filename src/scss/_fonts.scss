@@ -102,6 +102,6 @@
 
 .icx-logo {
     &::before {
-        content: "\e900";
+        content: $logo;
     }
 }  

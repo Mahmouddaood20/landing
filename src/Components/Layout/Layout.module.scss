@@ -55,9 +55,9 @@
 }
 
 .activeList{
-    height: 31rem !important;
+    height: 35rem !important;
     overflow: visible;
-    padding: 10rem 0 0 0 !important;
+    padding: 9rem 0 0 0 !important;
 }
 
 .list{
@@ -68,18 +68,43 @@
     transition: all 0.5s ease-in-out;
     overflow: hidden;
 
+    li{
+        display: block;
+        margin: auto;
+        margin-bottom: 1.5rem;
+    }
 
     a{
-        display: block;
         text-decoration: none;
         font-size: 40px;
         text-transform: uppercase;
         margin-bottom: 1.5rem;
+        position: relative;
+        color: $mainColor;
+    }
+
+    a::before{
+        content: '';
+        position: absolute;
+        top: 100%;
+        width: 0%;
+        margin-top: 0.2rem;
+        height: 2px;
+        background-color: $mainColor;
+        left: 0;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .teamLink::before{
+        height: 3px;
     }
 }
 
-.list a:hover{
-    color: inherit !important;
+// .list li a:hover{
+//     color: inherit !important;
+// }
+.list li a:hover::before{
+   width: 100%;
 }
 
 //////////////
@@ -151,11 +176,11 @@
 
 .closeMenu{
     list-style: none;
-    height: 130px;
+    height: 160px;
     display: block;
     overflow: hidden;
     position: absolute;
-    top: -10rem;
+    top: -15rem;
     padding-left: 1.2rem !important;
     transition: all 0.5s ease-in-out;
 }
@@ -170,6 +195,7 @@
     margin: 0.5rem 0 ;
     text-decoration: none;
     font-size: 16px;
+    text-transform: uppercase;
     cursor: pointer;
     transition: color 0.3s ease-in-out;
 }

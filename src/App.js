@@ -10,6 +10,7 @@ const Contact = lazy(() => import('./Screens/Contact/Contact'));
 const Teams = lazy(() => import('./Screens/Teams/Teams'));
 const Layout = lazy(() => import('./Components/Layout/Layout'));
 const TeamDetail = lazy(() => import('./Screens/Teams/detail/TeamDetail'));
+const International = lazy(() => import('./Screens/International/International'));
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
                     <Route path='/contact' exact component={Contact} />
                     <Route path='/team' exact component={Teams} />
                     <Route path='/team/:id' exact component={TeamDetail} />
+                    <Route path='/international' exact component={International} />
                 </Switch>
             </Suspense>
         </Router>

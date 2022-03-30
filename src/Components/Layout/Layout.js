@@ -39,13 +39,21 @@ export default function Layout({
                 <div className={Styles.showList}>
                     <span className={`${Styles.mainIcon} ${location.pathname === "/" ? Styles.firstMainIcon : ''} ${open ? Styles.activeMainIcon : ''}`} onClick={() => setOpen(!open)}></span>
                     <span className={`${Styles.explore} ${location.pathname === "/" ? Styles.firstExplore : ''} ${open ? 'd-none' : ''}`}>explore</span>
-                    <ul className={`${Styles.closeMenu} ${open ? Styles.activeCloseMenu : ''}`}>
+                    {/* <ul className={`${Styles.closeMenu} ${open ? Styles.activeCloseMenu : ''}`}>
                         <li>
                             <NavLink 
                                 to={'/company'}
                                 className={`${Styles.closeItem} ${location.pathname === "/company" ? Styles.acitveCloseItem : ''}`}
                             >
                                 Company
+                            </NavLink>
+                        </li>
+                        <li>
+                            <NavLink 
+                                to={'/international'}
+                                className={`${Styles.closeItem} ${location.pathname === "/international" ? Styles.acitveCloseItem : ''}`}
+                            >
+                                International
                             </NavLink>
                         </li>
                         <li>
@@ -72,20 +80,41 @@ export default function Layout({
                                 Contact
                             </NavLink>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
 
                 <div className='row'>
                     {/* menu */}
-                    {/* <div className='col-6 mx-auto'>
+                    <div className='col-6 mx-auto d-flex justify-content-center'>
                         <ul className={`${Styles.list} ${open ? Styles.activeList : ''}`}>
-                            <li><NavLink className={`${location.pathname === "/" ? 'text-white ' : 'text-main'}`} to="/">{Locale['Companies']}</NavLink></li>
-                            <li><NavLink className={`${location.pathname === "/" ? 'text-white ' : 'text-main'}`} to='/client'>{Locale['Clients']}</NavLink></li>
-                            <li><NavLink className={`${location.pathname === "/" ? 'text-white ' : 'text-main'}`} to='/team'>{Locale['Teams']}</NavLink></li>
-                            <li><NavLink className={`${location.pathname === "/" ? 'text-white ' : 'text-main'}`} to='/contact'>{Locale['Contact']}</NavLink></li>
+                            <li>
+                                <NavLink className={`${location.pathname === "/" ? 'text-white ' : 'text-main'}`} to="/company">
+                                    {Locale['Company']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className={`${location.pathname === "/" ? 'text-white ' : 'text-main'}`} to='/international'>
+                                    {Locale['International']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className={`${location.pathname === "/" ? 'text-white ' : 'text-main'}`} to='/client'>
+                                    {Locale['Clients']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className={`${Styles.teamLink} ${location.pathname === "/" ? 'text-white ' : 'text-main'}`} to='/team'>
+                                    {Locale['Teams']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className={`${location.pathname === "/" ? 'text-white ' : 'text-main'}`} to='/contact'>
+                                    {Locale['Contact']}
+                                </NavLink>
+                            </li>
                         </ul>
-                    </div> */}
-                    {/* {!open &&  */}
+                    </div>
+                    {!open && 
                         <>
                             <div 
                                 className={`${location.pathname === "/client" || location.pathname === "/team" ? 'h-90' : 'h-80'}`}>
@@ -93,7 +122,7 @@ export default function Layout({
                             </div>
                             <footer className={`${location.pathname !== "/" ? 'text-gray' : 'text-white'} mt-3`}>
                                 <div className='col-md-6 mx-auto'>
-                                        <div className='d-flex align-items-center'>
+                                        <div className='d-flex align-items-center justify-content-center'>
                                             <div className='me-md-5 me-2'>
                                                 <h2>Abdullah AlHudaithi</h2>
                                                 <h3>Professional Services</h3>
@@ -111,7 +140,7 @@ export default function Layout({
                                 </div>
                             </footer>
                         </>
-                    {/* } */}
+                    }
                 </div>
             </div>
         </div>

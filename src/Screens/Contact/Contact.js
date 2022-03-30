@@ -84,7 +84,7 @@ export default function Contact(){
                             <div className="row align-items-center">
                                 <div className="col-md-6 col-12">
                                     <button className="btn btn-primary w-100 text-18 fw-bold">
-                                        {Locale['Submit']}
+                                        {Locale['Send']}
                                     </button>
                                 </div>
                                 <div className="col-md-6 col-12">

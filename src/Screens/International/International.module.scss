@@ -1,0 +1,15 @@
+@import '../../scss/variables';
+
+
+.International{
+    height: 80vh;
+    margin-top: 6rem;
+    padding-left: 1rem;
+
+    h2{
+        font-size: 24px;
+        font-weight: bold;
+        text-transform: capitalize;
+        color: $mainColor;
+    }
+}

@@ -6,7 +6,7 @@
     "Message": "Message",
     "Mobile": "Mobile",
     "Cancel":"Cancel",
-    "Submit":"Submit",
+    "Send":"Send",
     "Arabic":"Arabic",
     "English":"English",
     "Companies":"Companies",
@@ -16,5 +16,6 @@
     "Company_Info":"Company Info",
     "Company_Description":"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary",
     "Clients_Title":"clients",
-    "Client_Description": "You Can See All My Clients at this Page. Scroll to see"
+    "Client_Description": "You Can See All My Clients at this Page. Scroll to see",
+    "International": "International"
 }

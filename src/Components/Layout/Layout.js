@@ -5,8 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import Locale from '../../Locale'
 import arbImg from '../../assets/images/arb.png';
 import engImg from '../../assets/images/eng.jpg';
-import menuImg from '../../assets/images/menu.png'
-import globalImg from '../../assets/images/worldwide.png'
 
 export default function Layout({
     children,
@@ -128,13 +126,14 @@ export default function Layout({
                                                 <h3>Professional Services</h3>
                                             </div>
                                             <div className={Styles.divider} />
-                                            <div className='ms-md-5 ms-1 d-flex align-items-start'>
-                                                <img 
-                                                    src={globalImg}
+                                            <div className='ms-md-4 ms-1 d-flex align-items-start'>
+                                                {/* <img 
+                                                    src={location.pathname === "/" ? whitelogo: logo}
                                                     alt='global image'
                                                     className='me-3'
-                                                />
-                                                <h4>Proud Member of <br /> <span>Alliott Global Alliance</span></h4>
+                                                /> */}
+                                                <span className='icx icx-logo text-45'></span>
+                                                {/* <h4>Proud Member of <br /> <span>Alliott Global Alliance</span></h4> */}
                                             </div>
                                         </div>
                                 </div>

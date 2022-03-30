@@ -223,9 +223,16 @@ footer{
         margin-bottom: 0.3rem !important;
     }
 
-    img{
-        width: 35px;
-        height: 35px;
+    // img{
+    //     // width: 35px;
+    //     // height: 35px;
+    //     width: 220px;
+    //     height: auto;
+    //     margin-top: -0.6rem
+    // }
+
+    span{
+        margin-top: -0.5rem;
     }
 
     h3{
@@ -234,7 +241,7 @@ footer{
     }
 
     .divider{
-        height: 40px;
+        height: 45px;
         width: 1px;
         background-color: gray;
         display: inline-block;

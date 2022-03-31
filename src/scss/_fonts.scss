@@ -92,3 +92,9 @@
         content: $logo;
     }
 }
+
+.icx-plus{
+    &::before {
+        content: $icx-plus;
+    }
+}

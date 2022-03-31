@@ -1,20 +1,32 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { Modal } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import Styles from './Clients.module.scss'
+import AddClient from './AddClient/AddClient'
 import Locale from '../../Locale';
 import Layout from '../../Components/Layout/Layout';
 import { data } from './data'
+import useFetchClients from '../../hooks/Clients/useFetchClients';
 
 export default function Clients(){
 
     const [open , setOpen] = useState(1)
+    const [showModal , setShowModal] = useState(false)
     const locale = useSelector(state => state.locale_reducer.locale)
+    // const [data , status] = useFetchClients()
 
     return (
         <Layout>
             <div className='col-md-10 col-12 mx-auto'>
                 <div className={Styles.clientDetail}>
-                    <h2>{Locale['Clients_Title']}</h2>
+                    <div className='row align-items-center justify-content-between'>
+                        <div className='col-6'>
+                            <h2>{Locale['Clients_Title']}</h2>
+                        </div>
+                        <div className='col-6 text-end'>
+                            <AddClient />
+                        </div>
+                    </div>
                     {/* <p className='mt-3'>{Locale['Client_Description']}</p> */}
                     <div className={Styles.clientsDate} >
                         <div className='row'>
@@ -43,6 +55,7 @@ export default function Clients(){
                     </div>
                 </div>
             </div>
+           
         </Layout>
     )
 }

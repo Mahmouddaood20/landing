@@ -5,6 +5,7 @@ import Styles from './Teams.module.scss'
 import Locale from "../../Locale";
 import profileImg1 from '../../assets/images/profile1.jpg'
 import profileImg2 from '../../assets/images/profile2.jpg'
+import useFetchTeams from "../../hooks/Teams/useFetchTeams";
 
 const data = [
     {
@@ -43,6 +44,7 @@ export default function Teams(){
 
     const locale = useSelector(state => state.locale_reducer.locale)
     const history = useHistory()
+    // const [data , status] = useFetchTeams()
 
     return (
         <Layout>

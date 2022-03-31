@@ -1,10 +1,12 @@
 import Styles from './Team.module.scss'
 import { useHistory } from 'react-router-dom'
 import Layout from '../../../Components/Layout/Layout'
+import useFetchTeam from '../../../hooks/Teams/useFetchTeam'
 
 export default function TeamDetail(){
     const history = useHistory()
     const item = history.location.state.item
+    // const [team , status] = useFetchTeam(item.id)
 
     return (
         <Layout>

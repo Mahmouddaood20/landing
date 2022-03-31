@@ -81,22 +81,9 @@
     font-weight: bold;
 }
 
-
-.icx-close {
-    &::before {
-        content: $landing-close;
-    }
-}
-
 .icx-arrow-down{
     &::before {
         content: $arrow-down;
-    }
-}
-
-.icx-plus{
-    &::before {
-        content: $landing-plus;
     }
 }
 
@@ -104,4 +91,4 @@
     &::before {
         content: $logo;
     }
-}  
+}

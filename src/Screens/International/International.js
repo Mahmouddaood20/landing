@@ -1,21 +1,91 @@
-// import { useSelector } from 'react-redux';
-import Styles from './International.module.scss'
-import Locale from '../../Locale';
-import Layout from '../../Components/Layout/Layout';
+import { useState , useRef } from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import Styles from './international.module.scss'
+import { Link as NavLink } from 'react-router-dom';
+import Locale from '../../Locale'
 
 export default function International(){
-
-    // const locale = useSelector(state => state.locale_reducer.locale)
-
+    
+    const [open , setOpen] = useState(false)
+    const sliderRef = useRef(null)
+    const  settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        vertical:true,
+        verticalSwiping:true,
+        // variableWidth:true,
+        swipeToSlide:true,
+      };
+   
+    const items = [0,1,2,3].map(index => {
+        return (
+            <div 
+                className={`${Styles.item} ${!index ? Styles.first : index === 1 ? Styles.second : index === 2 ? Styles.third : Styles.fourth}`}
+                key={index}
+            >
+                {/* <div className={Styles.detail}>
+                    <h2>Supporting <br /> our clients in <br /> 80 countries <br />accross the world</h2>
+                    <h4>together as one</h4>
+                </div> */}
+            </div>
+        )
+    })
+    
     return (
-        <Layout>
-            <div className='col-md-10 col-12 mx-auto'>
-                <div className={Styles.International}>
-                    <h2>{Locale['International']}</h2>
+        <div className={`${Styles.international}`}>
+            <div className='container'>
+                <div className={Styles.showList}>
+                    <span className={`${Styles.mainIcon} ${open ? Styles.activeMainIcon : ''}`} onClick={() => setOpen(!open)}></span>
+                    <span className={`${Styles.logo} icx icx-logo text-48 mx-5 text-white`}/>
+                </div>
 
+                <div className='row'>
+                    {/* menu */}
+                    <div className='col-6 mx-auto d-flex justify-content-center'>
+                        <ul className={`${Styles.list} ${open ? Styles.activeList : ''}`}>
+                            <li>
+                                <NavLink to="/company">
+                                    {Locale['Company']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/international'>
+                                    {Locale['International']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/client'>
+                                    {Locale['Clients']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink className={`${Styles.teamLink}`} to='/team'>
+                                    {Locale['Teams']}
+                                </NavLink>
+                            </li>
+                            <li>
+                                <NavLink to='/contact'>
+                                    {Locale['Contact']}
+                                </NavLink>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </Layout>
-    );
-
-}    
+            <div className={Styles.Slider}>
+                <Slider {...settings} ref={sliderRef}>
+                    {items}
+                </Slider>
+            </div>
+            <div className={Styles.arrow}>
+                <span className='icx icx-arrow-down text-30' onClick={() => sliderRef.current.slickNext()} />
+            </div>
+        </div>
+    )
+}

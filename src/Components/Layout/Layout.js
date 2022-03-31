@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Locale from '../../Locale'
 import arbImg from '../../assets/images/arb.png';
 import engImg from '../../assets/images/eng.jpg';
+import logoImg from '../../assets/images/logo.svg';
 
 export default function Layout({
     children,
@@ -116,6 +117,15 @@ export default function Layout({
                         <>
                             <div 
                                 className={`${location.pathname === "/client" || location.pathname === "/team" ? 'h-90' : 'h-80'}`}>
+                                {location.pathname === "/" ?  
+                                    <div className={Styles.logo}>
+                                        <img 
+                                            src={logoImg}
+                                            aly="logo"
+                                        />
+                                        <h4>Proud Member of <br /> <span className='fw-bold'>Alliott Global Alliance</span></h4>
+                                    </div>
+                                    : ''}
                                 {children}
                             </div>
                             <footer className={`${location.pathname !== "/" ? 'text-gray' : 'text-white'} mt-3`}>
@@ -132,7 +142,7 @@ export default function Layout({
                                                     alt='global image'
                                                     className='me-3'
                                                 /> */}
-                                                <span className='icx icx-logo text-45'></span>
+                                                <span className='icx icx-logo text-44'></span>
                                                 {/* <h4>Proud Member of <br /> <span>Alliott Global Alliance</span></h4> */}
                                             </div>
                                         </div>

@@ -3,10 +3,14 @@
 .layout{
     min-height: 100vh;
     padding: 1rem 0;
-    background-color: $mainColor;
-    color: #fff !important;
+    background-size: cover !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    // background-color: $mainColor;
+    background: url('../../assets/images/homeBackground.jpg');
     color: $white !important;
     overflow: hidden;
+    transition: all .5s ease-in-out;
 }
 
 .activeLayout{
@@ -269,3 +273,38 @@ footer{
     }
 }
 
+
+.logo{
+    position: absolute;
+    top: 38%;
+    left: 42%;
+    animation: scale linear 0.5s;
+    transform: scale(1.7);
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    img{
+        width: 120px;
+        transform: scale(1.7);
+        transform: translateX(10px);
+    }
+
+    h4{
+        font-size: 16px;
+        display: block;
+        margin-top: 1rem;
+    }
+}
+
+@keyframes scale {
+    0%{
+        transform: scale(0.5);
+    }
+    // 100%{
+    //     transform: scale(1.7);
+    // }
+}

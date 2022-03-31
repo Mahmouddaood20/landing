@@ -213,4 +213,15 @@
         }
     }
 
+
+    @media (max-width: 768px) {
+    
+        .list {
+            li {
+                a {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
 }

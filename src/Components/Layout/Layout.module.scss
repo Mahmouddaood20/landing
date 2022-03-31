@@ -11,6 +11,7 @@
     color: $white !important;
     overflow: hidden;
     transition: all .5s ease-in-out;
+    width: 100vw;
 }
 
 .activeLayout{
@@ -307,4 +308,18 @@ footer{
     // 100%{
     //     transform: scale(1.7);
     // }
+}
+
+@media (max-width: 768px) {
+    .logo{
+        left: 23%;
+
+        img{
+            width: 78px;
+        }
+
+        h4{
+            font-size: 10px;
+        }
+    }
 }

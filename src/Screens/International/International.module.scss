@@ -11,8 +11,35 @@
     overflow: hidden;
     transition: all .5s ease-in-out;
     position: relative;
-    width: 100vw;
+    width: 100vw !important;
 
+    .interList{
+        position: absolute;
+        background-color: $mainColor;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 2;
+        right: 0;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+
+        .interClose{
+            margin-top: 1rem;
+            display: block;
+            position: absolute;
+            right: 5%;
+            top:0;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
+
+    .activeInterList{
+        overflow: visible;
+        height: 100%;
+    }
 
     .activeList{
         height: 35rem !important;
@@ -73,6 +100,7 @@
     .showList{
         position: absolute;
         top:5%;
+        left: 2%;
         display: flex;
         align-items: center;
         cursor: pointer;
@@ -84,10 +112,11 @@
         position: relative;
         position: relative;
         height: 20px;
-        width: 30px;
+        width: 25px;
         display: inline-block;
         cursor: pointer;
         color: $white;
+        margin-top: 0.2rem;
     }
     
     .activeMainIcon::before {
@@ -179,37 +208,37 @@
             // z-index: 1;
             opacity: 0.5;
         }
-            // .detail{
-            //     position: absolute;
-            //     height: 100%;
-            //     padding: 2% 0 2% 8%;
-            //     z-index: 1;
-            //     display: flex;
-            //     flex-direction: column;
-            //     justify-content: space-between;
-    
-            //     h2{
-            //         color: $white;
-            //         font-size: 42px;
-            //     }
-    
-            //     h4{
-            //         color: $white;
-            //         font-size: 33px;
-            //     }
-            // }
+        .detail{
+            position: absolute;
+            height: 95%;
+            padding: 5% 0 2% 16%;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            h2{
+                color: $white;
+                font-size: 42px;
+            }
+
+            h4{
+                color: $white;
+                font-size: 33px;
+            }
+        }
     }
 
     .arrow{
         position: absolute;
         bottom: 2rem;
-        padding: 0 5rem;
+        padding: 0 1.5rem;
 
         
         span{
             cursor: pointer;
             color: $white;
-            font-size: 26px;
+            font-size: 18px;
         }
     }
 
@@ -222,6 +251,18 @@
                     font-size: 20px;
                 }
             }
+        }
+
+        .Slider {
+
+            .item{
+
+                .detail{
+                    padding: 20% 0 2% 16%;
+                    height: 90%;
+                }
+            }
+
         }
     }
 }

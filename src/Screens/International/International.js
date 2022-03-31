@@ -29,22 +29,22 @@ export default function International(){
                 className={`${Styles.item} ${!index ? Styles.first : index === 1 ? Styles.second : index === 2 ? Styles.third : Styles.fourth}`}
                 key={index}
             >
-                {/* <div className={Styles.detail}>
+                <div className={Styles.detail}>
                     <h2>Supporting <br /> our clients in <br /> 80 countries <br />accross the world</h2>
                     <h4>together as one</h4>
-                </div> */}
+                </div>
             </div>
         )
     })
     
     return (
         <div className={`${Styles.international}`}>
-            <div className='container'>
                 <div className={Styles.showList}>
                     <span className={`${Styles.mainIcon} ${open ? Styles.activeMainIcon : ''}`} onClick={() => setOpen(!open)}></span>
-                    <span className={`${Styles.logo} icx icx-logo text-48 mx-5 text-white`}/>
+                    <span className={`${Styles.logo} icx icx-logo text-30 mx-2 text-white`} />
                 </div>
 
+            <div className={`${Styles.interList} ${open ? Styles.activeInterList : ''}`}>
                 <div className='row'>
                     {/* menu */}
                     <div className='col-6 mx-auto d-flex justify-content-center'>
@@ -77,6 +77,7 @@ export default function International(){
                         </ul>
                     </div>
                 </div>
+                <span className={`icx icx-close ${Styles.interClose}`} onClick={() => setOpen(false)}/>
             </div>
             <div className={Styles.Slider}>
                 <Slider {...settings} ref={sliderRef}>
@@ -84,7 +85,7 @@ export default function International(){
                 </Slider>
             </div>
             <div className={Styles.arrow}>
-                <span className='icx icx-arrow-down text-30' onClick={() => sliderRef.current.slickNext()} />
+                <span className='icx icx-arrow-down text-24' onClick={() => sliderRef.current.slickNext()} />
             </div>
         </div>
     )

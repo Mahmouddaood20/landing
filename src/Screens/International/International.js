@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import Styles from './international.module.scss'
+import Styles from './International.module.scss'
 import { Link as NavLink } from 'react-router-dom';
 import Locale from '../../Locale'
 

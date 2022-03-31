@@ -117,18 +117,28 @@ export default function Layout({
                         <>
                             <div 
                                 className={`${location.pathname === "/client" || location.pathname === "/team" ? 'h-90' : 'h-80'}`}>
-                                {location.pathname === "/" ?  
-                                    <div className={Styles.logo}>
-                                        <img 
-                                            src={logoImg}
-                                            aly="logo"
-                                        />
-                                        <h4>Proud Member of <br /> <span className='fw-bold'>Alliott Global Alliance</span></h4>
+                                <div className={`${location.pathname !== "/" && 'd-none'} ${Styles.homeContent}`}>
+                                     <div className='col-md-6 mx-auto'>
+                                        <div className='d-flex align-items-center justify-content-center'>
+                                            <div className='me-md-3 mt-2 me-2'>
+                                                <h2>Abdullah Al Hudaithi</h2>
+                                                <h3>Professional Services</h3>
+                                            </div>
+                                            <div className='ms-md-3 ms-1 d-flex align-items-start'>
+                                                {/* <img 
+                                                    src={location.pathname === "/" ? whitelogo: logo}
+                                                    alt='global image'
+                                                    className='me-3'
+                                                /> */}
+                                                <span className='icx icx-logo'></span>
+                                                {/* <h4>Proud Member of <br /> <span>Alliott Global Alliance</span></h4> */}
+                                            </div>
+                                        </div>
                                     </div>
-                                    : ''}
+                                </div>
                                 {children}
                             </div>
-                            <footer className={`${location.pathname !== "/" ? 'text-gray' : 'text-white'} mt-3`}>
+                            <footer className={`${location.pathname === "/" && 'd-none'} text-gray mt-3`}>
                                 <div className='col-md-6 mx-auto'>
                                         <div className='d-flex align-items-center justify-content-center'>
                                             <div className='me-md-5 me-2'>

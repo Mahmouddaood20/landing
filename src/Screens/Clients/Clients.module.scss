@@ -49,11 +49,15 @@
     list-style: none;
     display: flex;
     align-items: center;
-    transition: all 0.5s ease-in-out;
-    overflow: hidden;
-    height: 0;
-    padding: 0;
+    // transition: all 0.5s ease-in-out;
+    // overflow: hidden;
+    // height: 0;
+    // padding: 0;
     margin-top: 0.3rem;
+    padding: 1.5rem;
+    overflow-y: clip;
+    overflow-x: auto;
+    height: 200px;
 
     a{
         display: block;

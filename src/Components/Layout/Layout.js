@@ -18,7 +18,7 @@ export default function Layout({
     const dispatch = useDispatch()
     const location = useLocation()
     const locale = useSelector(state => state.locale_reducer.locale)
-    console.log("DOc", )
+    // console.log("DOc", )
 
     const changeLocale = lang => () => {
         dispatch({

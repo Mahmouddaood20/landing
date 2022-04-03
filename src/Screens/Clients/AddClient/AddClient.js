@@ -2,6 +2,7 @@
 import { useState, useRef } from 'react';
 import { Modal } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
+import Styles from './AddClient.module.scss'
 import { data } from '../data'
 import Locale from '../../../Locale';
 import useCreateClient from '../../../hooks/Clients/useAddClient';
@@ -17,6 +18,7 @@ export default function AddClient(){
         imgForSent: "",
         imgforDisplay:""
     })
+    const [inputShown , setInputShown] = useState(false)
     const inputRef = useRef(null)
     const formBody = new FormData()
     formBody.append("name" , name)
@@ -28,7 +30,10 @@ export default function AddClient(){
 
     return (
         <>
-            <button className='btn btn-clear btn-danger' onClick={() => setShowModal(!showModal)}>
+            <button className='btn btn-clear btn-danger' onClick={() => {
+                setInputShown(false)
+                setShowModal(!showModal)
+            }}>
                 <span className='icx icx-plus'></span>
             </button>
             <Modal  show={showModal} onHide={() => setShowModal(!showModal)} centered>
@@ -57,20 +62,31 @@ export default function AddClient(){
                                     <h4 className="text-14 fw-bold">Category :</h4>
                                 </div>
                                 <div className="col-9">
-                                    <select 
-                                        className='form-select'
-                                        value={category}
-                                        onChange={e => setCategory(e.target.value)}
-                                        placeholder={"Select Category"}
-                                    >
-                                        {data.map(item => {
-                                            return (
-                                                <option value={item.id}>
-                                                    {item.title}
-                                                </option>
-                                            )
-                                        })}
-                                    </select>
+                                    <div className='d-flex align-items-center position-relative'>
+                                        {!inputShown ? <select 
+                                            className='form-select'
+                                            value={category}
+                                            onChange={e => setCategory(e.target.value)}
+                                            placeholder={"Select Category"}
+                                        >
+                                            {data.map(item => {
+                                                return (
+                                                    <option value={item.id}>
+                                                        {item.title}
+                                                    </option>
+                                                )
+                                            })}
+                                        </select> : <input 
+                                         className='form-control'
+                                         value={category}
+                                         onChange={e => setCategory(e.target.value)}
+                                         placeholder="Add New Catrogy"
+                                        />}
+                                        <span className={`${Styles.plus} icx ${inputShown ? 'icx-close text-14' : 'icx-plus'}`} onClick={() => {
+                                            setCategory('')
+                                            setInputShown(!inputShown)
+                                        }} />
+                                    </div>
                                 </div>
                             </div>
                         </div>
